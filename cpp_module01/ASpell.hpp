@@ -5,15 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: polmarti <polmarti@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 18:40:23 by polmarti          #+#    #+#             */
-/*   Updated: 2024/11/27 19:56:06 by polmarti         ###   ########.fr       */
+/*   Created: 2024/11/28 10:40:00 by polmarti          #+#    #+#             */
+/*   Updated: 2024/11/28 11:48:10 by polmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ASPELL_HPP
 # define ASPELL_HPP
-
-#include "Warlock.hpp"
 
 class ASpell
 {
@@ -21,17 +19,14 @@ class ASpell
 		std::string _name;
 		std::string _effects;
 	public:
-		ASpell(std::string name, std::string effects);
+		ASpell(std::string, std::string);
 		ASpell(ASpell const &);
 		ASpell & operator=(ASpell const &);
-		std::string & getName(void) const;
-		std::string & getEffects(void) const;
-		virtual ASpell *clone(void) const = 0;
+		std::string const &getName(void) const;
+		std::string const &getEffects(void) const;
+		virtual ASpell *clone(void) = 0;
 		void launch(ATarget const &) const;
 		virtual ~ASpell(void);
-
-
-		
 };
 
 #endif
