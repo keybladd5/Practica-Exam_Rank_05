@@ -6,7 +6,7 @@
 /*   By: polmarti <polmarti@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 09:55:48 by polmarti          #+#    #+#             */
-/*   Updated: 2024/12/03 12:08:07 by polmarti         ###   ########.fr       */
+/*   Updated: 2024/12/03 12:52:54 by polmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,14 @@ Warlock::Warlock(std::string name, std::string title) : _name(name), _title(titl
 Warlock::~Warlock(void)
 {
 	std::cout << _name << ": My job here is done!\n";
+	std::map<std::string, ASpell *>::iterator it_begin = _arr.begin();
+	std::map<std::string, ASpell *>::iterator it_end = _arr.end();
+	while(it_begin != it_end)
+	{
+		delete it_begin->second;
+		it_begin++;
+	}
+	_arr.clear();
 }
 
 std::string const &Warlock::getName(void) const { return (_name); }
