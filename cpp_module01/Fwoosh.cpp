@@ -5,21 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: polmarti <polmarti@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/28 10:40:11 by polmarti          #+#    #+#             */
-/*   Updated: 2024/11/28 11:58:07 by polmarti         ###   ########.fr       */
+/*   Created: 2024/12/03 10:28:50 by polmarti          #+#    #+#             */
+/*   Updated: 2024/12/03 12:03:50 by polmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fwoosh.hpp"
 
-Fwoosh::Fwoosh(void) : ASpell("Fwoosh","fwooshed")
+Fwoosh::Fwoosh(void) : ASpell("Fwoosh", "fwooshed")
 {
 }
 
-ASpell * Fwoosh::clone(void) const
+Fwoosh::~Fwoosh(void)
 {
-	return (new Fwoosh);
 }
-Fwoosh::~Fwoosh()
+
+ASpell *Fwoosh::clone(void) const
 {
+	ASpell *tmp = new Fwoosh();
+	return (tmp);
 }

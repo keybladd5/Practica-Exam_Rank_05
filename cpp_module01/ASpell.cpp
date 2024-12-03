@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: polmarti <polmarti@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/28 10:40:11 by polmarti          #+#    #+#             */
-/*   Updated: 2024/11/28 11:42:50 by polmarti         ###   ########.fr       */
+/*   Created: 2024/12/03 10:28:50 by polmarti          #+#    #+#             */
+/*   Updated: 2024/12/03 11:52:27 by polmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ ASpell::ASpell(std::string name, std::string effects) : _name(name), _effects(ef
 
 ASpell::ASpell(ASpell const &src)
 {
-	*this = src
+	*this = src;
 }
 
-ASpell & ASpell::operator=(ASpell const &src) 
+ASpell & ASpell::operator=(ASpell const &src)
 {
 	if (this != &src)
 	{
@@ -35,11 +35,12 @@ std::string const &ASpell::getName(void) const { return (_name); }
 
 std::string const &ASpell::getEffects(void) const { return (_effects); }
 
+ASpell::~ASpell(void)
+{
+}
+
 void ASpell::launch(ATarget const &target) const
 {
 	target.getHitBySpell(*this);
 }
 
-ASpell::~ASpell()
-{
-}

@@ -5,21 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: polmarti <polmarti@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/28 10:40:11 by polmarti          #+#    #+#             */
-/*   Updated: 2024/11/28 11:57:31 by polmarti         ###   ########.fr       */
+/*   Created: 2024/12/03 10:28:50 by polmarti          #+#    #+#             */
+/*   Updated: 2024/12/03 12:37:09 by polmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dummy.hpp"
 
-Dummy::Dummy(void) : ATarget("Dummy")
+Dummy::Dummy(void) : ATarget("Target Practice Dummy")
 {
 }
 
-ATarget * Dummy::clone(void) const
+Dummy::~Dummy(void)
 {
-	return (new Dummy);
 }
-Dummy::~Dummy()
+
+ATarget *Dummy::clone(void) const
 {
+	ATarget *tmp = new Dummy();
+	return (tmp);
 }
